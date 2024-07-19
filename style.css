@@ -19,7 +19,7 @@ body{
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid var(--main-color);
     background-color: var(--primary-color);
     z-index: 3;
 }
@@ -75,6 +75,7 @@ body{
     cursor: pointer;
     background-color: #edf2fc;
     border-radius: 50%;
+    margin-right: -19px;
 }
 
 
@@ -89,13 +90,53 @@ body{
     --second-color:#fff;
 }
 
+:root {
+    --main-color: blue;
+}
+
+.color-switcher{
+    position: fixed;
+    display:none;
+    z-index: 4;
+    margin-top: 25px;
+    right: 0;
+    background: var(--primary-color);
+
+}
+
+.mobile-menu{
+    display: flex;
+}
+
+.theme-buttons-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 60px;
+    background: transparent;
+    justify-content: center;
+    box-shadow: 1px 0px 3px 2px ;
+    border-radius: 10px;
+}
+
+.color-switcher .theme-buttons-container .theme-buttons{
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin: 2px;
+    cursor: pointer;
+}
+
+
+
 
 .home {
      display: flex;
      flex-wrap: wrap; 
      margin-top: 0px;
      padding: 30px;
-     border-bottom: 3px solid blue;
+     border-bottom: 3px solid var(--main-color);
 }
 
 .home .gauche {
@@ -105,6 +146,7 @@ body{
 }
 
 .home .gauche h1 {
+
     color: transparent;
     font-size: 35px; 
     -webkit-text-stroke: var(--second-color) 2px;
@@ -116,18 +158,18 @@ body{
 
 
 .home .gauche h2 {
-    color:blue;
+    color:var(--main-color);
     margin-bottom: 10px;
 }
 
 .boutton1{
     height: 45px;
     font-size: 18px;
-    background-color: blue;
+    background-color: var(--main-color);
     color: #edf2fc;
     border-radius: 20px;
     margin-top: 15px;
-    border: 3px solid blue;
+    border: 3px solid var(--main-color);
     cursor: pointer;
 }
 
@@ -135,9 +177,9 @@ body{
     height: 45px;
     font-size: 18px;
     background-color: var(--primary-color);
-    color: blue;
+    color: var(--main-color);
     border-radius: 20px;
-    border: 3px solid blue;
+    border: 3px solid var(--main-color);
     margin-top: 15px;
     cursor: pointer;
 }
@@ -145,15 +187,15 @@ body{
 
 .boutton1:hover{
     background-color: var(--primary-color);
-    color: blue;
-    border: 3px solid blue;
+    color: var(--main-color);
+    border: 3px solid var(--main-color);
     transition: 0.5s;
 }
 
 .boutton2:hover{
-    background-color: blue;
+    background-color: var(--main-color);
     color: var(--primary-color);
-    border: 3px solid blue;
+    border: 3px solid var(--main-color);
     transition: 0.5s;
 }
 
@@ -206,23 +248,18 @@ body{
 
 .home .droite .box .content img{
     position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 210px;
     object-fit: cover;
     z-index: 2;
 }
 
-/*.home .droite .box:hover .content img{
-    opacity: 0;
-}*/
+
 
 
 .skills {
     padding: 30px;
     margin-bottom: 50px;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid var(--main-color);
 }
 
 .skills  .title {
@@ -274,7 +311,7 @@ body{
     font-size: 10px;
     text-align: center;
     border-radius: 30px;
-    background: blue;
+    background: var(--main-color);
     transition: width .5s linear;
 }
 
@@ -320,10 +357,10 @@ body{
 
 .about {
     padding: 30px;
-    border-bottom: 3px solid blue;
+    border-bottom: 3px solid var(--main-color);
 }
 
-.about  .title {
+.title {
     text-align: center;
     margin-top: -50px;
     margin-bottom: 30px;
@@ -363,6 +400,78 @@ body{
     transform: translateY(-3px);
 }
 
+.contact-containte {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-containte .title{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: -30px;
+
+}
+
+.contact-containte .contenue {
+    position: relative;
+    width: 450px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 1px 2px var(--main-color) ;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+    border-radius: 20px;
+}
+
+.contact-containte .contenue h1{
+    margin-bottom: 40px;
+}
+
+.contact-containte .contenue .input {
+    margin-left: 60px;
+    margin-top: -30px;
+    font-weight: 600;
+    border-radius: 3pxKO;
+}
+
+.contact-containte .contenue .input .inp {
+    margin: 5px;
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+}
+
+#message{
+    padding-bottom: 100px;
+}
+
+.btn{
+    height: 30px;
+    font-size: 18px;
+    background-color: var(--main-color);
+    color: #edf2fc;
+    border-radius: 10px;
+    margin-top: 6px;
+    margin-left: 8px;
+    border: 3px solid var(--main-color);
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--primary-color);
+    color: var(--main-color);
+    border: 3px solid var(--main-color);
+    transition: 0.5s;
+}
+
+
+
 .footer{
     background: #556;
     justify-content: center;
@@ -395,7 +504,7 @@ body{
     }
 
     .navbar .logo{
-        margin-right: -50px;
+        margin-right: -120px;
     }
 
 
@@ -412,6 +521,7 @@ body{
         display: block;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 30px;
     }
 
     .home .droite{
@@ -424,6 +534,14 @@ body{
 
     .carte .carte1{
         margin-top: 25px;
+    }
+
+    .contact-containte .contenue {
+        width: 400px;
+    }
+
+    .contact-containte .contenue .input{
+        margin-left: 40px;
     }
 
 }
@@ -574,7 +692,6 @@ body{
 
 .flashcard-back .phrase h1 { 
     margin-top: -10px;
-    color:  ;
 }
 
 .flashcard-back .phrase h3 {

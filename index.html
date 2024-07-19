@@ -18,11 +18,22 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#about">Contact</a></li>
                 <li><img  src="icon/moon.svg" id="icon"></li>
+                <li>
+                    <img src="icon/color-palette.svg" id="icon" class="pallete-btn">
+                </li>
             </ul>
         </div>
     </nav>
     </header>
     <section class="home" id="home">
+        <div class="color-switcher">
+            <div class="theme-buttons-container">
+                <span class="theme-buttons" data-color="#0000FF" style="background:#0000FF;"></span>
+                <span class="theme-buttons" data-color="#B6410F" style="background: #b6410F;"></span>
+                <span class="theme-buttons" data-color="#228B22" style="background:#228B22;"></span>
+                <span class="theme-buttons" data-color="#00FFFF" style="background:#00FFFF;"></span>
+            </div>
+        </div>
         <div class="gauche">
             <h1 class="sed">Hi,I'm Se Dera</h1>
             <h2><span class="js"></span></h2>
@@ -33,8 +44,7 @@
         <div class="droite">
             <div class="box">
                 <div class="content">
-                    <img src="img/photo.jpg" width="250px">
-                    <h1>hello word</h1>
+                    <img src="img/teste.png">
                 </div>
             </div>
         </div>
@@ -202,7 +212,7 @@
                 <p>Position:</p>
                 <p> Antsirabe</p>
             </div>
-            <img src="icon/logo-instagram.svg" id="contact" width="30px" style="background-color: rgb(228, 39, 70);">
+            <img src="img/instagram.png" id="contact" width="45px">
         </div>
         <div class="carte">
             <div class="carte1">
@@ -213,11 +223,27 @@
                 <p>Freelance:</p>
                 <p>Availlable</p>
             </div>
-            <img src="icon/logo-whatsapp.svg" id="contact" width="30px" style="background-color: rgb(36, 231, 36);" >
+            <img src="img/twitter.png" id="contact" width="42px">
         </div>
         </div>
     </section>
+    <section>
+        <div class="contact-containte">
+            <h1 class="title">Contact</h1>
+            <div class="contenue">
+                <h1>Drop Me a Message</h1>
+                    <div class="input">
+                        <input type="text" placeholder="Name" class="inp">
+                        <input type="text" placeholder="Email" class="inp">
+                        <input type="text" placeholder="Message"class="inp" id="message"><br>
+                        <input type="submit" value="  Send  " class="btn">
+                    </div>
+            </div>
+        </div>
+    </section>
 
+
+    
     <section class="footer">
         <p>Thanks for watching</p>
         <span>Copyright by Se Dera</span>
@@ -226,7 +252,29 @@
 
 
 
-        <script src="js/typed.umd.js"></script>
+
+
+
+
+
+    <!--THEME COLOR-->
+    <script>
+        let themeButtons = document.querySelectorAll('.theme-buttons');
+
+        themeButtons.forEach(color =>{
+            color.addEventListener('click',()=>{
+                let dataColor = color.getAttribute('data-color');
+                document.querySelector(':root').style.setProperty('--main-color', dataColor);
+            });
+
+        });
+
+    </script>
+
+    <!--TEXT INTERACTIVE-->
+    <script src="js/typed.umd.js"></script>
+
+        <!--DARK MODE-->
         <script>
             var icon = document.getElementById("icon");
 
@@ -240,8 +288,21 @@
             }
 
         </script>
-        
+
+
+       <!--PROGRESSEBAR--> 
         <script src="js/progressbar.js"></script>
+
+
+        <!--SWITCHER COLOR-->
+        <script>
+            const pallete = document.querySelector(".pallete-btn")
+            const color = document.querySelector(".color-switcher")
+
+            pallete.addEventListener('click', ()=>{
+            color.classList.toggle('mobile-menu')
+            });
+        </script>
 
 </body>
 </html>
